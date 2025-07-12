@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos de Servicio | AEROPUERTOS.lat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .lang-toggle button.active { font-weight: bold; color: #1e40af; }
+    .prose h2 { margin-top: 2em; margin-bottom: 1em; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="./index.html" class="text-xl font-bold text-blue-800">AEROPUERTOS.lat</a>
+      <div class="lang-toggle space-x-2 text-sm">
+        <button onclick="setLang('es')" class="active">ES</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('pt')">PT</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto py-16 px-6">
+    <article class="prose lg:prose-xl">
+      <h1 data-key="title">Términos de Servicio</h1>
+      <p data-key="last_updated">Última actualización: 11 de Julio de 2025</p>
+      
+      <div data-key="content">
+        <!-- Spanish Content -->
+        <div lang="es">
+          <p>Estos términos y condiciones describen las reglas y regulaciones para el uso del sitio web de Aeropuertos.lat.</p>
+          <p>Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones. No continúes usando Aeropuertos.lat si no estás de acuerdo con todos los términos y condiciones establecidos en esta página.</p>
+          <h2>1. Licencia</h2>
+          <p>A menos que se indique lo contrario, Aeropuertos.lat y/o sus licenciantes poseen los derechos de propiedad intelectual de todo el material en Aeropuertos.lat. Todos los derechos de propiedad intelectual están reservados.</p>
+          <h2>2. Responsabilidad del Contenido</h2>
+          <p>No seremos responsables de ningún contenido que aparezca en su sitio web. Usted se compromete a protegernos y defendernos contra todas las reclamaciones que se presenten en su sitio web.</p>
+        </div>
+        <!-- English Content (hidden by default) -->
+        <div lang="en" style="display:none;">
+          <p>These terms and conditions outline the rules and regulations for the use of Aeropuertos.lat's Website.</p>
+          <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Aeropuertos.lat if you do not agree to take all of the terms and conditions stated on this page.</p>
+          <h2>1. License</h2>
+          <p>Unless otherwise stated, Aeropuertos.lat and/or its licensors own the intellectual property rights for all material on Aeropuertos.lat. All intellectual property rights are reserved.</p>
+          <h2>2. Content Liability</h2>
+          <p>We shall not be held responsible for any content that appears on your Website. You agree to protect and defend us against all claims that are rising on your Website.</p>
+        </div>
+        <!-- Portuguese Content (hidden by default) -->
+        <div lang="pt" style="display:none;">
+          <p>Estes termos e condições descrevem as regras e regulamentos para o uso do Website da Aeropuertos.lat.</p>
+          <p>Ao acessar este site, presumimos que você aceita estes termos e condições. Não continue a usar Aeropuertos.lat se não concordar com todos os termos e condições declarados nesta página.</p>
+          <h2>1. Licença</h2>
+          <p>Salvo indicação em contrário, a Aeropuertos.lat e/ou os seus licenciadores detêm os direitos de propriedade intelectual de todo o material em Aeropuertos.lat. Todos os direitos de propriedade intelectual são reservados.</p>
+          <h2>2. Responsabilidade pelo Conteúdo</h2>
+          <p>Não seremos responsáveis por qualquer conteúdo que apareça no seu Website. Você concorda em nos proteger e defender contra todas as reivindicações que surgirem no seu Website.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const translations = {
+      es: { title: "Términos de Servicio", last_updated: "Última actualización: 11 de Julio de 2025" },
+      en: { title: "Terms of Service", last_updated: "Last updated: July 11, 2025" },
+      pt: { title: "Termos de Serviço", last_updated: "Última atualização: 11 de julho de 2025" }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      for (const key in t) {
+        const el = document.querySelector(`[data-key="${key}"]`);
+        if (el) el.innerHTML = t[key];
+      }
+      
+      document.querySelectorAll('[data-key="content"] > div').forEach(div => {
+        div.style.display = div.getAttribute('lang') === lang ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-toggle button[onclick*="'${lang}'"]`).classList.add('active');
+      document.documentElement.lang = lang;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setLang('es'));
+  </script>
+</body>
+</html>

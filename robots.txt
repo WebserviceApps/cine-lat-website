@@ -1,0 +1,8 @@
+# Archivo robots.txt para cine.lat
+# Permite el acceso a todos los crawlers a todo el contenido.
+
+User-agent: *
+Allow: /
+
+# Ubicación del Sitemap (opcional pero recomendado)
+Sitemap: https://www.cine.lat/sitemap.xml

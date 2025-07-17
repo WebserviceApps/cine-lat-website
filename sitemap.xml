@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://www.cine.lat/</loc>
+    <lastmod>2025-07-17</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
+  <!-- Página de Política de Privacidad -->
+  <url>
+    <loc>https://www.cine.lat/politica-de-privacidad.html</loc>
+    <lastmod>2025-07-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Página de Términos de Servicio -->
+  <url>
+    <loc>https://www.cine.lat/terminos-de-servicio.html</loc>
+    <lastmod>2025-07-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
